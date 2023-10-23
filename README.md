@@ -9,6 +9,7 @@ https://repeat.is/api/v1/
 To use our widgets you will need an API key and the shop UUID
 
 ### Product overview widget
+Example: https://sjostrand.is/pages/askriftir
 
 ```
   <link rel="stylesheet" href="https://productswidget.repeat.is/assets/repeatProductOverview.css">
