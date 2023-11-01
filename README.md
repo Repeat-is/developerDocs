@@ -1,24 +1,24 @@
-# Developer documentation
+## Developer documentation
 Developer docs for various Repeat.is products
 
-## API
+# API
 Our API documentation can be found here:
 https://repeat.is/api/v1/
 
 
 
-## Widgets
+# Widgets
 To use our widgets you will need an API key and the shop UUID
 
 
 
-### Product overview widget
+## Product overview widget
 Example: https://sjostrand.is/pages/askriftir
 Docs: https://github.com/Repeat-is/developerDocs/blob/main/ProductOverviewWidget.md
 
 
 
-### Shopify - Buy subscripton button 
+## Shopify - Buy subscripton button 
 ![image](https://github.com/Repeat-is/developerDocs/assets/6918659/c718d327-fdf5-42e8-beaa-0b0367ce03b4)
 
 Create a new file in the themes "snippets" folder. 
