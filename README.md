@@ -14,6 +14,10 @@ To use our widgets you need an API key and the shop UUID (found under "Stillinga
 ## Products, checkout and subscription management
 
 - [Subscription product overview widget](Widgets/ProductOverivewWidget/ProductOverviewWidget.md)
+- [Subscription login widget](Widgets/LoginWidget/LoginWidgetExample.html)
+
+## Shopify
+
 - [Shopify - Buy subscripton button (liquid)](Widgets/BuySubscriptionButton/Shopify/LiquidExample.md)
 - [Shopify - Buy subscripton button (React component)](Widgets/BuySubscriptionButton/Shopify/ReactComponentExample.tsx)
 
