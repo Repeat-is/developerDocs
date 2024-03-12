@@ -1,9 +1,11 @@
 import React from "react";
 
-interface WindowSettings {
+type ProductOverviewTypes = {
+  // Required
   uuid: string;
   repeatAPIKey: string;
 
+  // Optional
   repeatColorPrimary?: string;
   repeatBorderRadius?: number | string;
   showIntervalSettings?: boolean;
@@ -20,4 +22,4 @@ interface WindowSettings {
     | "-price"
     | "-title"
     | "-created";
-}
+};
