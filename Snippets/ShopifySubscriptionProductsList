@@ -1,0 +1,96 @@
+<script>
+  window.storeProductVariants = [
+    {% for product in collections.all.products %}
+      {% for variant in product.variants %}
+        {
+          id: {{ variant.id }},
+          title: "{{ variant.title | escape }}",
+          sku: "{{ variant.sku | escape }}",
+          product_handle: "{{ product.handle }}",
+          product_title: "{{ product.title | escape }}",
+          image: "{{ variant.image | default: product.featured_image | img_url: 'medium' }}",
+        }{% unless forloop.last and forloop.parentloop.last %},{% endunless %}
+      {% endfor %}
+    {% endfor %}
+  ];
+
+   const variantIds = window.storeProductVariants.map(variant => variant.id);
+
+   const getVariantData = async () => {
+    const url = 'https://repeat.is/api/v1/shopify_variants/?variant_ids=' + variantIds.join(',');
+    const headers = {
+      'Content-Type': 'application/json',
+      'x-api-key': 'xxxxxxx'
+    };
+
+    const response = await fetch(url, { headers });
+    const data = await response.json();
+
+    data.forEach(variant => {
+      console.log(variant);
+      const variantElement = document.querySelector(`.repeat-hidden[data-variant-id="${variant.shopify_variant_id}"]`);
+      console.log(variantElement);
+      if (variantElement) {
+        variantElement.classList.remove('repeat-hidden');
+      }else{
+        console.log('no variant element found');
+      }
+    });
+
+
+  };
+
+  getVariantData();
+</script>
+
+<style>
+  .repeat-hidden {
+    display: none !important;
+  }
+
+  .repeatProductOverview {
+    max-width: 1200px;
+    margin: auto;
+    justify-content: center;
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .repeat-button {
+    background-color: #748cab;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white !important;
+  }
+
+  .repeat-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+</style>
+
+<div class="repeatProductOverview">
+  {% for product in collections.all.products %} {% for variant in
+  product.variants %}
+  <div
+    class="repeat-hidden repeat-product-container"
+    data-variant-id="{{ variant.id }}"
+  >
+    <img
+      src="{{
+        variant.image | default : product.featured_image | img_url : 'medium'
+      }}"
+      alt="{{ variant.title }}"
+    />
+    <div class="repeat-button-container">
+      <a href="{{ product.url }}" class="repeat-button"> Skoða vöru </a>
+    </div>
+  </div>
+  {% endfor %} {% endfor %}
+</div>

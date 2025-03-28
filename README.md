@@ -40,3 +40,7 @@ Examples of implementations:
 ### Content API
 
 - [Content API](Widgets/RepeatContent/RepeatContentAPI.md)
+
+# Snippets
+
+- [List available Shopify products](Snippets/ShopifySubscriptionProductsList)
