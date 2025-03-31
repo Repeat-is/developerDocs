@@ -44,3 +44,4 @@ Examples of implementations:
 # Snippets
 
 - [List available Shopify products](Snippets/ShopifySubscriptionProductsList)
+- [Currently selected variant button to Repeat Checkout](Snippets/ShopifyBuyCurrentlySelectedVariant.liquid)
